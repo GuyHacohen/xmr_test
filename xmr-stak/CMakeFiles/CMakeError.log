@@ -1,0 +1,89 @@
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_53f60/fast"
+/usr/bin/make -f CMakeFiles/cmTC_53f60.dir/build.make CMakeFiles/cmTC_53f60.dir/build
+make[1]: Entering directory '/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53f60.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -I/usr/local/cuda-9.0/include  -march=native -mtune=native     -o CMakeFiles/cmTC_53f60.dir/CheckSymbolExists.c.o   -c /home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘CL_VERSION_2_0’ undeclared (first use in this function)
+   return ((int*)(&CL_VERSION_2_0))[argc];
+                   ^
+/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_53f60.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_53f60.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_53f60.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_53f60/fast' failed
+make: *** [cmTC_53f60/fast] Error 2
+
+File /home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </usr/local/cuda-9.0/include/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f9fc7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f9fc7.dir/build.make CMakeFiles/cmTC_f9fc7.dir/build
+make[1]: Entering directory '/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f9fc7.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -march=native -mtune=native     -o CMakeFiles/cmTC_f9fc7.dir/CheckSymbolExists.c.o   -c /home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f9fc7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9fc7.dir/link.txt --verbose=1
+/usr/bin/cc  -march=native -mtune=native      CMakeFiles/cmTC_f9fc7.dir/CheckSymbolExists.c.o  -o cmTC_f9fc7 
+CMakeFiles/cmTC_f9fc7.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f9fc7.dir/build.make:97: recipe for target 'cmTC_f9fc7' failed
+make[1]: *** [cmTC_f9fc7] Error 1
+make[1]: Leaving directory '/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f9fc7/fast' failed
+make: *** [cmTC_f9fc7/fast] Error 2
+
+File /home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_90b73/fast"
+/usr/bin/make -f CMakeFiles/cmTC_90b73.dir/build.make CMakeFiles/cmTC_90b73.dir/build
+make[1]: Entering directory '/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90b73.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -march=native -mtune=native  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_90b73.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_90b73
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90b73.dir/link.txt --verbose=1
+/usr/bin/cc  -march=native -mtune=native  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_90b73.dir/CheckFunctionExists.c.o  -o cmTC_90b73 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_90b73.dir/build.make:97: recipe for target 'cmTC_90b73' failed
+make[1]: *** [cmTC_90b73] Error 1
+make[1]: Leaving directory '/home/stenly/spell_xmr/xmr-stak/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_90b73/fast' failed
+make: *** [cmTC_90b73/fast] Error 2
+
+
